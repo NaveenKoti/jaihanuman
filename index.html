@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta charset='UTF-8'>
+    <meta charset="UTF-8">
     <title>Hanuman Chalisa</title>
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,19 +12,24 @@
     <meta name="keywords"
         content="Hanuman Chalisa, chanting, devotion, spirituality, Lord Hanuman, blessings, protection, obstacles, healing, gratitude, divine connection, hanuman jayanti, Jai Shree Ram, Shree Ram">
 
-    <meta property="og:title" content="Hanuman Chalisa">
-    <meta property="og:description"
-        content="Experience the transformative power of chanting the Hanuman Chalisa. Tune in anytime to immerse yourself in the sacred verses dedicated to Lord Hanuman, invoking blessings, protection, and spiritual guidance.">
-    <meta property="og:image"
-        content="https://github.com/NaveenKoti/jaihanuman/blob/14cdd32c8f6f2bae5724873e1508dffcdf0d4735/hanuman_chalisa_player.png">
-    <meta property="og:url" content="https://naveenkoti.github.io/jaihanuman/">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hanuman Chalisa">
-    <meta name="twitter:description"
-        content="Experience the transformative power of chanting the Hanuman Chalisa. Tune in anytime to immerse yourself in the sacred verses dedicated to Lord Hanuman, invoking blessings, protection, and spiritual guidance.">
-    <meta name="twitter:image"
-        content="https://github.com/NaveenKoti/jaihanuman/blob/14cdd32c8f6f2bae5724873e1508dffcdf0d4735/hanuman_chalisa_player.png">
+    <!-- Primary Meta Tags -->
+<title>Hanuman Chalisa</title>
+<meta name="title" content="Hanuman Chalisa" />
+<meta name="description" content="Experience the transformative power of chanting the Hanuman Chalisa. Tune in anytime to immerse yourself in the sacred verses dedicated to Lord Hanuman, invoking blessings, protection, and spiritual guidance. Whether seeking solace, strength, or simply a moment of divine connection, let the Hanuman Chalisa uplift your spirit and illuminate your path." />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://naveenkoti.github.io/jaihanuman/" />
+<meta property="og:title" content="Hanuman Chalisa" />
+<meta property="og:description" content="Experience the transformative power of chanting the Hanuman Chalisa. Tune in anytime to immerse yourself in the sacred verses dedicated to Lord Hanuman, invoking blessings, protection, and spiritual guidance. Whether seeking solace, strength, or simply a moment of divine connection, let the Hanuman Chalisa uplift your spirit and illuminate your path." />
+<meta property="og:image" content="https://github.com/NaveenKoti/jaihanuman/blob/9daa9bba39464175f5d8337235e00c78ae0e2e7e/hanuman_chalisa_player.png" />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://naveenkoti.github.io/jaihanuman/" />
+<meta property="twitter:title" content="Hanuman Chalisa" />
+<meta property="twitter:description" content="Experience the transformative power of chanting the Hanuman Chalisa. Tune in anytime to immerse yourself in the sacred verses dedicated to Lord Hanuman, invoking blessings, protection, and spiritual guidance. Whether seeking solace, strength, or simply a moment of divine connection, let the Hanuman Chalisa uplift your spirit and illuminate your path." />
+<meta property="twitter:image" content="https://github.com/NaveenKoti/jaihanuman/blob/9daa9bba39464175f5d8337235e00c78ae0e2e7e/hanuman_chalisa_player.png" />
+
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXE8XBW8SP"></script>
     <script>
@@ -396,10 +401,10 @@
                 music.pause();
                 playBtn.className = 'play';
                 playBtn.innerHTML = '<i class="material-icons">play_arrow</i>';
-                dataLayer.push({
-                    'event': 'music_played',
-                    'music_title': 'श्री हनुमान चालीसा'
-                });
+                // dataLayer.push({
+                //     'event': 'music_played',
+                //     'music_title': 'श्री हनुमान चालीसा'
+                // });
                 gtag('event', 'music_played', {
                     'event_category': 'Music',
                     'event_label': 'श्री हनुमान चालीसा'
@@ -409,12 +414,12 @@
                 playBtn.className = 'play';
                 playBtn.innerHTML = '<i class="material-icons">play_arrow</i>';
                 music.currentTime = 0;
-                dataLayer.push({
-                    'event': 'music_completed',
-                    'music_title': 'श्री हनुमान चालीसा'
-                });
-                gtag('event', 'heart_icon_clicked', {
-                    'event_category': 'Interaction',
+                // dataLayer.push({
+                //     'event': 'music_completed',
+                //     'music_title': 'श्री हनुमान चालीसा'
+                // });
+                gtag('event', 'music_completed', {
+                    'event_category': 'Music',
                     'event_label': 'श्री हनुमान चालीसा'
                 });
             });
@@ -489,6 +494,7 @@
             var credits = document.getElementById('credits');
             var tooltipText = credits.textContent.trim().substring(8);
             credits.setAttribute('data-tooltip', tooltipText);
+            music.onloadeddata();
         });
     </script>
 
