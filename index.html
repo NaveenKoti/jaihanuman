@@ -388,6 +388,10 @@
                     'event': 'music_paused',
                     'music_title': 'श्री हनुमान चालीसा'
                 });
+                gtag('event', 'music_paused', {
+                    'event_category': 'Music',
+                    'event_label': 'श्री हनुमान चालीसा'
+                });
             } else {
                 music.pause();
                 playBtn.className = 'play';
@@ -395,6 +399,10 @@
                 dataLayer.push({
                     'event': 'music_played',
                     'music_title': 'श्री हनुमान चालीसा'
+                });
+                gtag('event', 'music_played', {
+                    'event_category': 'Music',
+                    'event_label': 'श्री हनुमान चालीसा'
                 });
             }
             music.addEventListener('ended', function () {
@@ -404,6 +412,10 @@
                 dataLayer.push({
                     'event': 'music_completed',
                     'music_title': 'श्री हनुमान चालीसा'
+                });
+                gtag('event', 'heart_icon_clicked', {
+                    'event_category': 'Interaction',
+                    'event_label': 'श्री हनुमान चालीसा'
                 });
             });
         }
