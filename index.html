@@ -384,15 +384,27 @@
                 music.play();
                 playBtn.className = 'pause';
                 playBtn.innerHTML = '<i class="material-icons">pause</i>';
+                dataLayer.push({
+                    'event': 'music_paused',
+                    'music_title': 'श्री हनुमान चालीसा'
+                });
             } else {
                 music.pause();
                 playBtn.className = 'play';
                 playBtn.innerHTML = '<i class="material-icons">play_arrow</i>';
+                dataLayer.push({
+                    'event': 'music_played',
+                    'music_title': 'श्री हनुमान चालीसा'
+                });
             }
             music.addEventListener('ended', function () {
                 playBtn.className = 'play';
                 playBtn.innerHTML = '<i class="material-icons">play_arrow</i>';
                 music.currentTime = 0;
+                dataLayer.push({
+                    'event': 'music_completed',
+                    'music_title': 'श्री हनुमान चालीसा'
+                });
             });
         }
 
