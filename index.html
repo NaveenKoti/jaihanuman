@@ -13,19 +13,24 @@
     <meta name="keywords"
         content="Hanuman Chalisa, chanting, devotion, spirituality, Lord Hanuman, blessings, protection, obstacles, healing, gratitude, divine connection, hanuman jayanti, Jai Shree Ram, Shree Ram">
 
-<meta name="title" content="Hanuman Chalisa" />
+    <meta name="title" content="Hanuman Chalisa" />
 
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://naveenkoti.github.io/jaihanuman/" />
-<meta property="og:title" content="Hanuman Chalisa" />
-<meta property="og:description" content="Explore the profound impact of chanting the Hanuman Chalisa for blessings, protection, and spiritual guidance. Let it uplift your spirit and illuminate your path." />
-<meta property="og:image" content="https://github.com/NaveenKoti/jaihanuman/blob/9daa9bba39464175f5d8337235e00c78ae0e2e7e/hanuman_chalisa_player.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://naveenkoti.github.io/jaihanuman/" />
+    <meta property="og:title" content="Hanuman Chalisa" />
+    <meta property="og:description"
+        content="Explore the profound impact of chanting the Hanuman Chalisa for blessings, protection, and spiritual guidance. Let it uplift your spirit and illuminate your path." />
+    
 
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://naveenkoti.github.io/jaihanuman/" />
-<meta property="twitter:title" content="Hanuman Chalisa" />
-<meta property="twitter:description" content="Explore the profound impact of chanting the Hanuman Chalisa for blessings, protection, and spiritual guidance. Let it uplift your spirit and illuminate your path." />
-<meta property="twitter:image" content="https://github.com/NaveenKoti/jaihanuman/blob/9daa9bba39464175f5d8337235e00c78ae0e2e7e/hanuman_chalisa_player.png" />
+        <meta content="https://github.com/NaveenKoti/jaihanuman/blob/9daa9bba39464175f5d8337235e00c78ae0e2e7e/hanuman_chalisa_player.png" name="og:image">
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://naveenkoti.github.io/jaihanuman/" />
+    <meta property="twitter:title" content="Hanuman Chalisa" />
+    <meta property="twitter:description"
+        content="Explore the profound impact of chanting the Hanuman Chalisa for blessings, protection, and spiritual guidance. Let it uplift your spirit and illuminate your path." />
+    <meta property="twitter:image"
+        content="https://github.com/NaveenKoti/jaihanuman/blob/9daa9bba39464175f5d8337235e00c78ae0e2e7e/hanuman_chalisa_player.png" />
 
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXE8XBW8SP"></script>
@@ -492,6 +497,31 @@
             var tooltipText = credits.textContent.trim().substring(8);
             credits.setAttribute('data-tooltip', tooltipText);
             music.onloadeddata();
+        });
+
+        music.addEventListener('timeupdate', function () {
+            var percentPlayed = (music.currentTime / music.duration) * 100;
+
+            if (percentPlayed >= 50 && !this.triggered50Percent) {
+                gtag('event', '50_percent_playback', {
+                    'event_category': 'Playback Progress',
+                    'event_label': 'Reached 50%'
+                });
+                this.triggered50Percent = true;
+            }
+
+            if (percentPlayed >= 75 && !this.triggered75Percent) {
+                gtag('event', '75_percent_playback', {
+                    'event_category': 'Playback Progress',
+                    'event_label': 'Reached 75%'
+                });
+                this.triggered75Percent = true;
+            }
+        });
+
+        music.addEventListener('play', function () {
+            this.triggered50Percent = false;
+            this.triggered75Percent = false;
         });
     </script>
 
